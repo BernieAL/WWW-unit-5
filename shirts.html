@@ -29,14 +29,17 @@
                 <a class="navbar-brand" href="#">Bernie's Site</a>
               </div>
           
+             
               <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                  <li><a href="index.html">Home</span></a></li>
+                  <li ><a href="index.html">Home </span></a></li>
                   <li><a href="AboutMe.html">About Me</a></li>
                   <li><a href="ContactMe.html">Contact Me</a></li>
                   <li><a href="MyWork.html">Work</a></li>
-                  <li class="active"><a href="MyStore.html">Store</a></li>
+                  <li class="active"><a href="MyStore.html">Store<span class="sr-only">(current)</a></li>
+                  <li><a href="cart.html">Cart</a></li>
+                  
                 </ul>
                 
               </div><!-- /.navbar-collapse -->
@@ -46,17 +49,35 @@
         <!-- END NAV -->
 
 
-              
-         
+        <!--MAIN CONTENT-->
+
+            <!-- JUMBOTRON-->
+                        
+            <div class="jumbotron">
+                <div class="container text-center">
+                    <h1>SHIRTS</h1>
+                   
+                    <br></br>
+                    <ul style=""id="categories">
+                     <a href="/socks.html" class="btn btn-primary" name="socks">Socks</a>
+                     <a href="/shirts.html" class="btn btn-primary" name="shirts">Shirts</a>
+                     <a href="/pants.html" class="btn btn-primary" name="pants">Pants</a>
+                   </ul>
+                 </div>
+            </div>
+            <!--END JUMBOTRON-->
+             <!-- ALL ITEMS -->
+             <div class="container" id="AllItems">
+              <ul id="AllItemsList">
+                  
+              </ul>
+
+                
+
+            </div>
 
 
-          
-
-        <!--BEGIN MAIN CONTENT-->
             
-
-        <!-- END MAIN CONTENT-->
-
 
 
 
@@ -64,5 +85,6 @@
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <!-- Latest compiled JavaScript -->
          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+         <script src="script.js"></script>
     </body>
 </html>

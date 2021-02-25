@@ -6,23 +6,68 @@ window.onload=()=> {
 
   const inventory = [
     {
-      itemName: "greenSocks",
+      itemName: "GreenSocks",
       price: 19.94,
       stock: 10,
+      cat: 'socks'
     }, {
-      itemName: "rainbowSocks",
+      itemName: "RainbowSocks",
       price: 19.94,
       stock: 10,
+      cat: 'socks'
     },
     {
-      itemName: "redSocks",
+      itemName: "RedSocks",
       price: 19.94,
       stock: 10,
+      cat: 'socks'
     },
     {
-      itemName: "LightUpSocks",
+      itemName: "RedShirt",
       price: 19.94,
       stock: 10,
+      cat: 'shirts'
+    }, {
+      itemName: "BlueShirt",
+      price: 19.94,
+      stock: 10,
+      cat: 'shirts'
+    },
+    {
+      itemName: "PurpleShirt",
+      price: 19.94,
+      stock: 10,
+      cat: 'shirts'
+    },
+    {
+      itemName: "BlackPants",
+      price: 19.94,
+      stock: 10,
+      cat: 'pants'
+    },
+    {
+      itemName: "LeatherPants",
+      price: 19.94,
+      stock: 10,
+      cat: 'pants'
+    },
+    {
+      itemName: "GreyPants",
+      price: 19.94,
+      stock: 10,
+      cat: 'pants'
+    },
+    {
+      itemName: "WhiteShirt",
+      price: 19.94,
+      stock: 10,
+      cat: 'shirts'
+    },
+    {
+      itemName: "GraphicTee",
+      price: 19.94,
+      stock: 10,
+      cat: 'shirts'
     },
   ]
 
@@ -64,13 +109,13 @@ window.onload=()=> {
     
     //<img src="images/img-1.jpg" alt="...">
         const imgEl = document.createElement('img')
-        imgEl.setAttribute("src","images/img-1.jpg")
+        imgEl.setAttribute("src",`images/${inventory[i].itemName}.jpg`)
         
     
     //<p class="card-text">Light up socks</p>
         const p = document.createElement('p')
         p.className = "card-text"
-        p.innerHTML = "test"
+        p.innerHTML = inventory[i].price
     
     //<a href="#" class="btn btn-primary" id="rainbowSock" name="rainbowSock" value="19.94">Add to Cart</a>
         const ahref2 = document.createElement('a')
@@ -151,8 +196,12 @@ window.onload=()=> {
   /* General function to handle adding to cart from either AllItems or Top sellers */
       const AddToCart = (e)=>{
         
-        //move existing session storage into temp array to concat with updated itemsInCart
-        let tempArray = []
+        
+        let t = JSON.parse(myStorage.getItem('ItemsInCart'))
+        console.log("myStorage.getItem('ItemsInCart'): " + t)
+                //move existing session storage into temp array to concat with updated itemsInCart
+        let tempArray = [t]
+        console.log(tempArray)
         //= myStorage.getItem('ItemsInCart')
 
         let itemName = e.target.name
@@ -232,6 +281,38 @@ window.onload=()=> {
       }
   } 
 //=======================================================
+
+if(window.location.href === (`${baseURL}socks.html`)){
+
+
+//filter inventory array and return items of category = socks only
+ let socks = inventory.filter((elem)=>{
+      return elem.cat === 'socks'
+ })
+renderAllItems(socks)
+}
+//=========================================================
+if(window.location.href === (`${baseURL}shirts.html`)){
+
+
+  //filter inventory array and return items of category = socks only
+   let shirts = inventory.filter((elem)=>{
+        return elem.cat === 'shirts'
+   })
+  renderAllItems(shirts)
+  }
+//===========================================================
+if(window.location.href === (`${baseURL}pants.html`)){
+
+
+  //filter inventory array and return items of category = socks only
+   let pants = inventory.filter((elem)=>{
+        return elem.cat === 'pants'
+   })
+  renderAllItems(pants)
+  }
+
+
 }
 //END SCRIPT
 
